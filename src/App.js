@@ -3,7 +3,6 @@ import SeletedDiv from './components/SeletedDiv'
 import User from './components/User'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Container } from '@mui/material'
 import Grid from '@mui/material/Grid'
 
 function App() {

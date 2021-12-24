@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from '@mui/material'
-import Grid from '@mui/material/Grid'
 
 const allUsers = ({ user }) => {
   return (
