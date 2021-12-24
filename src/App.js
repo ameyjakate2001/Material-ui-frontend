@@ -31,7 +31,7 @@ function App() {
       <Grid
         container
         style={{ marginTop: '40px', marginBottom: '40px' }}
-        spacing={3}
+        spacing={2}
       >
         {users.map((user, index) => (
           <Grid item xs={12} md={4} lg={3}>
