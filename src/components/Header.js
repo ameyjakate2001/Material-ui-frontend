@@ -14,13 +14,13 @@ const Header = () => {
       <ul className={isActive ? 'nav-options active' : 'nav-options'}>
         <li>
           <span></span>
-          <a href='#'>Product</a>
+          <a href>Product</a>
         </li>
         <li>
-          <a href='#'>Download</a>
+          <a href>Download</a>
         </li>
         <li>
-          <a href='#'>Pricing</a>
+          <a href>Pricing</a>
         </li>
       </ul>
     </header>
