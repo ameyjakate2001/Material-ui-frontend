@@ -14,13 +14,19 @@ const Header = () => {
       <ul className={isActive ? 'nav-options active' : 'nav-options'}>
         <li>
           <span></span>
-          <a href='true'>Product</a>
+          <a href='/#' onClick={(e) => e.preventDefault()}>
+            Product
+          </a>
         </li>
         <li>
-          <a href>Download</a>
+          <a href='/#' onClick={(e) => e.preventDefault()}>
+            Download
+          </a>
         </li>
         <li>
-          <a href>Pricing</a>
+          <a href='/#' onClick={(e) => e.preventDefault()}>
+            Pricing
+          </a>
         </li>
       </ul>
     </header>
