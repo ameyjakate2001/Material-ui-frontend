@@ -1,10 +1,13 @@
 import React from 'react'
 import { Container } from '@mui/material'
 
-const allUsers = ({ user }) => {
+const allUsers = ({ selectedIndex, user, index, click }) => {
   return (
     <Container>
-      <div className='user'>
+      <div
+        className={selectedIndex === index ? 'user selected' : 'user'}
+        onClick={click}
+      >
         <p>
           {user.gender} - {user.nat}
         </p>

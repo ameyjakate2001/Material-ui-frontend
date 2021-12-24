@@ -7,6 +7,10 @@ import Grid from '@mui/material/Grid'
 
 function App() {
   const [users, setUsers] = useState([])
+  const [selectedIndex, setselectedIndex] = useState(0)
+  const selectedDivHandler = (index) => {
+    setselectedIndex(index)
+  }
 
   const fetchData = async () => {
     const { data } = await axios.get(
@@ -23,15 +27,23 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <SeletedDiv />
+      <SeletedDiv selectedUser={users[selectedIndex]} />
       <Grid
         container
         style={{ marginTop: '40px', marginBottom: '40px' }}
         spacing={3}
       >
-        {users.map((user) => (
+        {users.map((user, index) => (
           <Grid item xs={12} md={4} lg={3}>
-            <User user={user} />
+            <User
+              selectedIndex={selectedIndex}
+              key={index}
+              user={user}
+              index={index}
+              click={() => {
+                selectedDivHandler(index)
+              }}
+            />
           </Grid>
         ))}
       </Grid>

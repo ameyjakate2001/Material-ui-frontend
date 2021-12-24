@@ -100,8 +100,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #A259FF;
-  height: 170px;
+  background-color: #ffffff;
+  height: 150px;
   color: #FFFFFF;
   padding: 10px 16px 8px 8px;
   box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
@@ -114,8 +114,28 @@ main {
     color: rgb(85, 94, 94);
     font-weight: 600;
 }
+.user p:nth-child(3) {
+    color: #E16259;
+    font-weight: 600;
+}
 .user h4 {
+  color: #000000;
   font-size: 20px;
+}
+.selected {
+  background: #A259FF;
+  color: #ffffff;
+}
+.selected h4 {
+  color: #fff;
+}
+.selected p:nth-child(1) {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+.selected p:nth-child(3) {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .mobile-menu {
