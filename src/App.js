@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import SeletedDiv from './components/SeletedDiv'
+import User from './components/User'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Container } from '@mui/material'
+import Grid from '@mui/material/Grid'
 
 function App() {
+  const [users, setUsers] = useState([])
+
+  const fetchData = async () => {
+    const { data } = await axios.get(
+      'https://randomuser.me/api/?inc=gender,name,nat,location,picture,email&results=20'
+    )
+    const { results } = data
+    console.log(results)
+    setUsers(results)
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      <SeletedDiv />
+      <Grid
+        container
+        style={{ marginTop: '40px', marginBottom: '40px' }}
+        spacing={3}
+      >
+        {users.map((user) => (
+          <Grid item xs={12} md={4} lg={3}>
+            <User user={user} />
+          </Grid>
+        ))}
+      </Grid>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
